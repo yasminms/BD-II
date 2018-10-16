@@ -16,9 +16,9 @@ public class Executavel {
 		clienteNumeroUm.setNome("Joao");
 		clienteNumeroUm.setEndereco("Rua julio de castilho");
 		clienteNumeroUm.setCidade("sapucaia do sul");
-		clienteNumeroUm.setCep(06776);
+		clienteNumeroUm.setCep("06776");
 		clienteNumeroUm.setUf("RS");
-		clienteNumeroUm.setIe(318533545);
+		clienteNumeroUm.setIe("318533545");
 		em.persist(clienteNumeroUm);
 
 		em.getTransaction().commit();
