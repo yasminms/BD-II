@@ -1,85 +1,74 @@
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity @Table(name="cliente")
 public class Cliente {
-
-	@Id @Column(columnDefinition="INT(4)", nullable = false) @GeneratedValue
-	private Integer CodCliente;
-	@Column(length = 100, nullable = false)
-	private String Nome;
-	@Column(nullable = false)
-	private String Endereco;
-	@Column(length = 60, nullable = false)
-	private String Cidade;
-	@Column(length = 11, nullable = false)
-	private String Cep;
-	@Column(columnDefinition="CHAR(2)", nullable = false)
-	private String Uf;
-	@Column(length = 12, nullable = false)
-	private String Ie;
-
-	public Cliente() {
-		super();
-	}
-
+	
+	@OneToMany(mappedBy = "cliente")
+	private List<Pedido> pedidos;
+	@Id @Column(name = "CodCliente", columnDefinition="int(4)", nullable = false) @GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer codCliente;
+	@Column(name = "Nome", length = 100, nullable = false)
+	private String nome;
+	@Column(name = "Endereco", nullable = false)
+	private String endereco;
+	@Column(name = "Cidade", length = 60, nullable = false)
+	private String cidade;
+	@Column(name = "Cep", length = 11, nullable = false)
+	private String cep;
+	@Column(name = "Uf", columnDefinition="CHAR(2)", nullable = false)
+	private String uf;
+	@Column(name = "Ie", length = 12, nullable = false)
+	private String ie;
+	
 	public Integer getCodCliente() {
-		return CodCliente;
+		return codCliente;
 	}
-
 	public void setCodCliente(Integer codCliente) {
-		CodCliente = codCliente;
+		this.codCliente = codCliente;
 	}
-
 	public String getNome() {
-		return Nome;
+		return nome;
 	}
-
 	public void setNome(String nome) {
-		Nome = nome;
+		this.nome = nome;
 	}
-
 	public String getEndereco() {
-		return Endereco;
+		return endereco;
 	}
-
 	public void setEndereco(String endereco) {
-		Endereco = endereco;
+		this.endereco = endereco;
 	}
-
 	public String getCidade() {
-		return Cidade;
+		return cidade;
 	}
-
 	public void setCidade(String cidade) {
-		Cidade = cidade;
+		this.cidade = cidade;
 	}
-
 	public String getCep() {
-		return Cep;
+		return cep;
 	}
-
 	public void setCep(String cep) {
-		Cep = cep;
+		this.cep = cep;
 	}
-
 	public String getUf() {
-		return Uf;
+		return uf;
 	}
-
 	public void setUf(String uf) {
-		Uf = uf;
+		this.uf = uf;
 	}
-
 	public String getIe() {
-		return Ie;
+		return ie;
 	}
-
 	public void setIe(String ie) {
-		Ie = ie;
+		this.ie = ie;
 	}
 
 }
