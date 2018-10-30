@@ -3,16 +3,19 @@
 	<persistence-unit name="Exercicios" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<properties>
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/bancoTeste?useTimezone=true&amp;serverTimezone=UTC"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/bancoTeste?useTimezone=true&amp;serverTimezone=UTC&amp;UseUnicode=true&amp;characterEncoding=utf8"/>
 			<property name="javax.persistence.jdbc.user" value="root"/>
 			<property name="javax.persistence.jdbc.password" value="ifsul2017"/>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
 			<property name ="hibernate.dialect"
-			value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+			value="LocalMysqlDialect" />
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.format_sql" value="true" />
 			<property name="hibernate.use_sql_comments" value="false" />
 			<property name="hibernate.hbm2ddl.auto" value="create" />
+			<property name="hibernate.connection.CharSet" value="utf8"/>
+			<property name="hibernate.connection.characterEncoding" value="utf8"/>
+			<property name="hibernate.connection.useUnicode" value="true"/>
 		</properties>
 	</persistence-unit>
 </persistence>

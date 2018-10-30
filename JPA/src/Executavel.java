@@ -12,7 +12,6 @@ public class Executavel {
 
 		Cliente clienteNumeroUm = new Cliente();
 
-		clienteNumeroUm.setCodCliente(3);
 		clienteNumeroUm.setNome("Joao");
 		clienteNumeroUm.setEndereco("Rua julio de castilho");
 		clienteNumeroUm.setCidade("sapucaia do sul");

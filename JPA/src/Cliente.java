@@ -28,6 +28,10 @@ public class Cliente {
 	@Column(name = "Ie", length = 12, nullable = false)
 	private String ie;
 	
+	public Cliente() {
+		
+	}
+	
 	public Integer getCodCliente() {
 		return codCliente;
 	}
